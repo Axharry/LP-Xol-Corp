@@ -99,13 +99,13 @@ export const ContactSection = () => {
                 Instagram
               </p>
               <a
-                href="https://www.instagram.com/xolariacorporation"
+                href="https://www.instagram.com/xolariacorp"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-2 block text-base text-[#1A1A1A] underline-offset-4 hover:underline"
                 data-testid="contact-instagram-link"
               >
-                @xolariacorporation
+                @xolariacorp
               </a>
             </div>
           </div>

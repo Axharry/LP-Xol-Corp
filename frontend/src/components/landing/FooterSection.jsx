@@ -44,13 +44,13 @@ export const FooterSection = () => {
             Instagram
           </p>
           <a
-            href="https://www.instagram.com/xolariacorporation"
+            href="https://www.instagram.com/xolariacorp"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-3 block text-sm text-[#1A1A1A] underline-offset-4 hover:underline"
             data-testid="footer-instagram-link"
           >
-            @xolariacorporation
+            @xolariacorp
           </a>
         </div>
       </div>
