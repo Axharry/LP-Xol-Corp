@@ -168,40 +168,6 @@ export const XolariaTreasuryPage = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <div className="text-center">
-            <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
-              {t({ en: "Interested in Xolaria Treasury?", id: "Tertarik dengan Xolaria Treasury?" })}
-            </h2>
-            <p className="mt-4 text-base text-[#6C757D]">
-              {t({
-                en: "Contact us to learn more about this project.",
-                id: "Hubungi kami untuk mempelajari lebih lanjut tentang proyek ini."
-              })}
-            </p>
-            <div className="mt-8 flex justify-center gap-4">
-              <Button
-                onClick={() => navigate("/#contact")}
-                className="rounded-sm bg-[#D90429] px-6 text-white hover:bg-[#EF233C]"
-                data-testid="contact-us-button"
-              >
-                {t({ en: "Contact Us", id: "Hubungi Kami" })}
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => navigate("/")}
-                className="rounded-sm border-gray-300"
-                data-testid="back-home-button"
-              >
-                {t({ en: "Back to Home", id: "Kembali ke Beranda" })}
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
