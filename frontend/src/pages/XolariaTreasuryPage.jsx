@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Globe, Vault, Users, Eye, BarChart3 } from "lucide-react";
+import { ArrowLeft, Globe, Vault, Eye, Shield, Layers } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+
+const TREASURY_LOGO = "https://customer-assets.emergentagent.com/job_xol-corp-preview-2/artifacts/ojat8lb3_LOGO%20-%20Xolaria%20On-Chain%20Treasury.png";
 
 export const XolariaTreasuryPage = () => {
   const navigate = useNavigate();
@@ -10,46 +12,37 @@ export const XolariaTreasuryPage = () => {
 
   const features = [
     {
-      icon: Vault,
-      title: { en: "On-Chain Reserves", id: "Cadangan On-Chain" },
-      description: {
-        en: "Transparent treasury reserves stored on-chain with full visibility. Every transaction is recorded and verifiable.",
-        id: "Cadangan treasury transparan yang disimpan on-chain dengan visibilitas penuh. Setiap transaksi dicatat dan dapat diverifikasi."
-      }
-    },
-    {
-      icon: Users,
-      title: { en: "Multi-Signature Governance", id: "Tata Kelola Multi-Tanda Tangan" },
-      description: {
-        en: "Secure multi-signature wallet implementation for treasury management. Require multiple approvals for fund movements.",
-        id: "Implementasi wallet multi-tanda tangan yang aman untuk manajemen treasury. Memerlukan beberapa persetujuan untuk pergerakan dana."
-      }
-    },
-    {
       icon: Eye,
-      title: { en: "Real-Time Auditing", id: "Audit Real-Time" },
+      title: { en: "Full Transparency", id: "Transparansi Penuh" },
       description: {
-        en: "Continuous real-time auditing capabilities. Track all treasury activities with complete transparency.",
-        id: "Kemampuan audit real-time yang berkelanjutan. Lacak semua aktivitas treasury dengan transparansi penuh."
+        en: "The treasury is fully verifiable on-chain, ensuring transparency and real-time visibility for stakeholders.",
+        id: "Treasury dapat diverifikasi sepenuhnya on-chain, memastikan transparansi dan visibilitas real-time untuk pemangku kepentingan."
       }
     },
     {
-      icon: BarChart3,
-      title: { en: "Analytics Dashboard", id: "Dashboard Analitik" },
+      icon: Layers,
+      title: { en: "EVM-Compatible", id: "Kompatibel EVM" },
       description: {
-        en: "Comprehensive analytics dashboard for treasury performance, allocation tracking, and financial reporting.",
-        id: "Dashboard analitik komprehensif untuk kinerja treasury, pelacakan alokasi, dan pelaporan keuangan."
+        en: "Utilizing an EVM-compatible address enables seamless integration across multiple blockchain networks, including the Ethereum ecosystem.",
+        id: "Menggunakan alamat yang kompatibel dengan EVM memungkinkan integrasi mulus di berbagai jaringan blockchain, termasuk ekosistem Ethereum."
+      }
+    },
+    {
+      icon: Vault,
+      title: { en: "Open Infrastructure", id: "Infrastruktur Terbuka" },
+      description: {
+        en: "The treasury functions as an open financial infrastructure layer for future development and ecosystem expansion.",
+        id: "Treasury berfungsi sebagai lapisan infrastruktur keuangan terbuka untuk pengembangan masa depan dan ekspansi ekosistem."
+      }
+    },
+    {
+      icon: Shield,
+      title: { en: "Strategic Management", id: "Manajemen Strategis" },
+      description: {
+        en: "Supporting operational stability, ecosystem growth, and strategic initiatives as part of Xolaria's long-term financial strategy.",
+        id: "Mendukung stabilitas operasional, pertumbuhan ekosistem, dan inisiatif strategis sebagai bagian dari strategi keuangan jangka panjang Xolaria."
       }
     }
-  ];
-
-  const benefits = [
-    { en: "Complete transparency for stakeholders", id: "Transparansi penuh untuk pemangku kepentingan" },
-    { en: "Reduced operational risks", id: "Risiko operasional yang berkurang" },
-    { en: "Automated compliance reporting", id: "Pelaporan kepatuhan otomatis" },
-    { en: "Decentralized governance", id: "Tata kelola terdesentralisasi" },
-    { en: "Immutable transaction history", id: "Riwayat transaksi yang tidak dapat diubah" },
-    { en: "24/7 accessibility", id: "Aksesibilitas 24/7" }
   ];
 
   return (
@@ -85,16 +78,13 @@ export const XolariaTreasuryPage = () => {
       <section className="border-b border-gray-100 bg-[#F8F9FA]">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            {/* Image Placeholder */}
+            {/* Logo Image */}
             <div className="flex items-center justify-center">
-              <div className="flex h-64 w-full max-w-md items-center justify-center rounded-sm border-2 border-dashed border-gray-300 bg-white">
-                <div className="text-center">
-                  <span className="text-6xl font-bold text-gray-300">X</span>
-                  <p className="mt-2 text-sm text-gray-400">
-                    {t({ en: "Image Coming Soon", id: "Gambar Segera Hadir" })}
-                  </p>
-                </div>
-              </div>
+              <img
+                src={TREASURY_LOGO}
+                alt="Xolaria On-Chain Treasury Reserve Logo"
+                className="h-64 w-64 rounded-3xl object-cover shadow-lg"
+              />
             </div>
 
             {/* Content */}
@@ -107,8 +97,40 @@ export const XolariaTreasuryPage = () => {
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-[#6C757D]">
                 {t({
-                  en: "Decentralized treasury management solution. Transparent on-chain reserves, multi-signature governance, and real-time auditing for organizations and DAOs.",
-                  id: "Solusi manajemen treasury terdesentralisasi. Cadangan on-chain yang transparan, tata kelola multi-tanda tangan, dan audit real-time untuk organisasi dan DAO."
+                  en: "Xolaria has established a digital asset treasury reserve as part of its long-term financial strategy, supporting operational stability, ecosystem growth, and strategic initiatives.",
+                  id: "Xolaria telah mendirikan cadangan treasury aset digital sebagai bagian dari strategi keuangan jangka panjangnya, mendukung stabilitas operasional, pertumbuhan ekosistem, dan inisiatif strategis."
+                })}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Description Section */}
+      <section className="border-b border-gray-100">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="max-w-4xl">
+            <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl mb-6">
+              {t({ en: "About the Treasury", id: "Tentang Treasury" })}
+            </h2>
+            
+            <div className="space-y-4 text-base leading-relaxed text-[#6C757D]">
+              <p>
+                {t({
+                  en: "Xolaria has established a digital asset treasury reserve as part of its long-term financial strategy, supporting operational stability, ecosystem growth, and strategic initiatives. The treasury is fully verifiable on-chain, ensuring transparency and real-time visibility for stakeholders.",
+                  id: "Xolaria telah mendirikan cadangan treasury aset digital sebagai bagian dari strategi keuangan jangka panjangnya, mendukung stabilitas operasional, pertumbuhan ekosistem, dan inisiatif strategis. Treasury dapat diverifikasi sepenuhnya on-chain, memastikan transparansi dan visibilitas real-time untuk pemangku kepentingan."
+                })}
+              </p>
+              <p>
+                {t({
+                  en: "To maximize interoperability, Xolaria utilizes an EVM-compatible address, enabling seamless integration across multiple blockchain networks, including the Ethereum ecosystem.",
+                  id: "Untuk memaksimalkan interoperabilitas, Xolaria menggunakan alamat yang kompatibel dengan EVM, memungkinkan integrasi mulus di berbagai jaringan blockchain, termasuk ekosistem Ethereum."
+                })}
+              </p>
+              <p>
+                {t({
+                  en: "The treasury also functions as an open financial infrastructure layer for future development and ecosystem expansion. For transparency purposes, the treasury address is publicly accessible, and any inbound transfers are treated as voluntary ecosystem contributions in alignment with Xolaria's treasury management strategy.",
+                  id: "Treasury juga berfungsi sebagai lapisan infrastruktur keuangan terbuka untuk pengembangan masa depan dan ekspansi ekosistem. Untuk tujuan transparansi, alamat treasury dapat diakses publik, dan setiap transfer masuk diperlakukan sebagai kontribusi ekosistem sukarela sesuai dengan strategi manajemen treasury Xolaria."
                 })}
               </p>
             </div>
@@ -117,13 +139,13 @@ export const XolariaTreasuryPage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="border-b border-gray-100">
+      <section className="bg-[#F8F9FA]">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
+          <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl mb-10">
             {t({ en: "Key Features", id: "Fitur Utama" })}
           </h2>
           
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -144,27 +166,6 @@ export const XolariaTreasuryPage = () => {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="border-b border-gray-100 bg-[#F8F9FA]">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
-            {t({ en: "Benefits", id: "Manfaat" })}
-          </h2>
-          
-          <div className="mt-8 grid gap-3 md:grid-cols-2">
-            {benefits.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 rounded-sm border border-gray-200 bg-white px-4 py-3"
-              >
-                <div className="h-2 w-2 rounded-full bg-[#D90429]" />
-                <span className="text-sm text-[#1A1A1A]">{t(item)}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>

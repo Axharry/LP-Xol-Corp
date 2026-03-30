@@ -9,6 +9,7 @@ const portfolioItems = [
     key: "cryptags",
     title: "CrypTags",
     route: "/CrypTags",
+    image: "https://customer-assets.emergentagent.com/job_xol-corp-preview-2/artifacts/ht733bqu_LOGO%20-%20CrypTags.png",
     description: {
       en: "A privacy-first offline wallet contact manager. Store wallet addresses, contact notes, and sensitive data locally with encryption. No external servers, no tracking.",
       id: "Manajer kontak wallet offline yang mengutamakan privasi. Simpan alamat wallet, catatan kontak, dan data sensitif secara lokal dengan enkripsi. Tanpa server eksternal, tanpa pelacakan."
@@ -18,6 +19,7 @@ const portfolioItems = [
     key: "cryptrack",
     title: "CrypTrack",
     route: "/CrypTrack",
+    image: "https://customer-assets.emergentagent.com/job_xol-corp-preview-2/artifacts/xnj0fgyv_LOGO%20-%20CrypTrack.png",
     description: {
       en: "Real-time cryptocurrency portfolio tracker. Monitor your holdings, track price movements, and analyze your investment performance across multiple blockchains.",
       id: "Pelacak portofolio cryptocurrency real-time. Pantau kepemilikan Anda, lacak pergerakan harga, dan analisis kinerja investasi Anda di berbagai blockchain."
@@ -27,6 +29,7 @@ const portfolioItems = [
     key: "cryptrust",
     title: "CrypTrust",
     route: "/CrypTrust",
+    image: "https://customer-assets.emergentagent.com/job_xol-corp-preview-2/artifacts/pikjwmir_LOGO%20-%20CrypTrust.png",
     description: {
       en: "Blockchain-based trust and verification system. Secure document verification, digital signatures, and immutable proof of authenticity for businesses and individuals.",
       id: "Sistem kepercayaan dan verifikasi berbasis blockchain. Verifikasi dokumen yang aman, tanda tangan digital, dan bukti keaslian yang tidak dapat diubah untuk bisnis dan individu."
@@ -36,6 +39,7 @@ const portfolioItems = [
     key: "xolaria-treasury",
     title: "Xolaria On-Chain Treasury Reserve",
     route: "/Xolaria-On-Chain-Treasury-Reserve",
+    image: "https://customer-assets.emergentagent.com/job_xol-corp-preview-2/artifacts/ojat8lb3_LOGO%20-%20Xolaria%20On-Chain%20Treasury.png",
     description: {
       en: "Decentralized treasury management solution. Transparent on-chain reserves, multi-signature governance, and real-time auditing for organizations and DAOs.",
       id: "Solusi manajemen treasury terdesentralisasi. Cadangan on-chain yang transparan, tata kelola multi-tanda tangan, dan audit real-time untuk organisasi dan DAO."
@@ -91,18 +95,13 @@ export const PortfolioSection = () => {
                   data-testid={`portfolio-slide-${item.key}`}
                 >
                   <div className="flex flex-col md:flex-row">
-                    {/* Image placeholder - White */}
+                    {/* Image */}
                     <div className="flex h-64 w-full items-center justify-center bg-white md:h-96 md:w-1/2">
-                      <div className="text-center">
-                        <div className="mx-auto mb-4 h-24 w-24 rounded-sm border-2 border-dashed border-gray-300 flex items-center justify-center">
-                          <span className="text-4xl font-bold text-gray-300">
-                            {item.title.charAt(0)}
-                          </span>
-                        </div>
-                        <p className="text-sm text-gray-400">
-                          {t({ en: "Image Coming Soon", id: "Gambar Segera Hadir" })}
-                        </p>
-                      </div>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-48 w-48 md:h-64 md:w-64 rounded-3xl object-cover shadow-lg"
+                      />
                     </div>
 
                     {/* Content */}

@@ -1,55 +1,113 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Globe, Shield, Lock, Smartphone, Database } from "lucide-react";
+import { ArrowLeft, Globe } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+
+const CRYPTAGS_LOGO = "https://customer-assets.emergentagent.com/job_xol-corp-preview-2/artifacts/ht733bqu_LOGO%20-%20CrypTags.png";
 
 export const CrypTagsPage = () => {
   const navigate = useNavigate();
   const { language, toggleLanguage, t } = useLanguage();
 
-  const features = [
+  const privacySections = [
     {
-      icon: Shield,
-      title: { en: "Privacy-First Design", id: "Desain Mengutamakan Privasi" },
-      description: {
-        en: "CrypTags is designed with a privacy-first approach. The application does not collect, transmit, or store personal data on external servers.",
-        id: "CrypTags dirancang dengan pendekatan yang mengutamakan privasi. Aplikasi tidak mengumpulkan, mengirimkan, atau menyimpan data pribadi di server eksternal."
-      }
+      title: "1. Information We Collect",
+      content: [
+        "CrypTags is designed with a privacy-first approach.",
+        "The application does not collect, transmit, or store personal data on external servers.",
+        "All information entered into the app is stored locally on the user's device.",
+        "This may include:",
+        "• Contact names",
+        "• Wallet addresses",
+        "• Contact notes",
+        "• Group or entity labels",
+        "• Optional email or phone information entered by the user",
+        "• Optional encrypted vault data (if used)",
+        "This information is stored only on your device and is not shared with the developer or any third parties."
+      ]
     },
     {
-      icon: Database,
-      title: { en: "Local Data Storage", id: "Penyimpanan Data Lokal" },
-      description: {
-        en: "All user data is stored locally on the device using internal storage. The app does not require an internet connection to function.",
-        id: "Semua data pengguna disimpan secara lokal di perangkat menggunakan penyimpanan internal. Aplikasi tidak memerlukan koneksi internet untuk berfungsi."
-      }
+      title: "2. Local Data Storage",
+      content: [
+        "CrypTags operates as an offline-first application.",
+        "All user data is stored locally on the device using internal storage. The app does not require an internet connection to function.",
+        "CrypTags does not maintain any remote database or cloud storage system.",
+        "Users have full control over their stored information."
+      ]
     },
     {
-      icon: Lock,
-      title: { en: "Encrypted Sensitive Data", id: "Data Sensitif Terenkripsi" },
-      description: {
-        en: "Store sensitive information like private keys and seed phrases with local encryption and password protection.",
-        id: "Simpan informasi sensitif seperti private key dan seed phrase dengan enkripsi lokal dan perlindungan kata sandi."
-      }
+      title: "3. Encrypted Sensitive Data",
+      content: [
+        "CrypTags may allow users to store sensitive information such as:",
+        "• Private keys",
+        "• Seed phrases",
+        "If used, this information is protected through local encryption and password protection within the application.",
+        "The developer cannot access, recover, or view this information.",
+        "Users are responsible for securely managing their device and application password."
+      ]
     },
     {
-      icon: Smartphone,
-      title: { en: "Offline-First", id: "Offline-First" },
-      description: {
-        en: "CrypTags operates as an offline-first application. No remote database or cloud storage system is required.",
-        id: "CrypTags beroperasi sebagai aplikasi offline-first. Tidak diperlukan database jarak jauh atau sistem penyimpanan cloud."
-      }
+      title: "4. Data Sharing",
+      content: [
+        "CrypTags does not sell, share, or transmit user data.",
+        "No user information is sent to:",
+        "• External servers",
+        "• Analytics services",
+        "• Advertising networks",
+        "• Third-party tracking tools",
+        "All data remains on the user's device."
+      ]
+    },
+    {
+      title: "5. Internet Usage",
+      content: [
+        "CrypTags does not require internet connectivity for its core functionality.",
+        "Internet access may only be used if the user chooses to open external links, such as:",
+        "• Developer support contact",
+        "• External documentation",
+        "• Donation pages",
+        "These actions are initiated voluntarily by the user."
+      ]
+    },
+    {
+      title: "6. Third-Party Services",
+      content: [
+        "CrypTags does not integrate with third-party data processing services.",
+        "No analytics, advertising SDKs, or tracking services are included in the application."
+      ]
+    },
+    {
+      title: "7. Children's Privacy",
+      content: [
+        "CrypTags is not directed toward children under the age of 13.",
+        "The application does not knowingly collect personal information from children."
+      ]
+    },
+    {
+      title: "8. User Responsibility",
+      content: [
+        "Because CrypTags stores data locally, users are responsible for:",
+        "• Protecting their device",
+        "• Managing application passwords",
+        "• Backing up exported data if necessary",
+        "Loss of device access or deletion of the application may result in loss of locally stored data."
+      ]
+    },
+    {
+      title: "9. Changes to This Privacy Policy",
+      content: [
+        "This Privacy Policy may be updated from time to time.",
+        "Any updates will be reflected by updating the \"Last Updated\" date at the top of this page."
+      ]
+    },
+    {
+      title: "10. Contact Information",
+      content: [
+        "If you have questions about this Privacy Policy or the CrypTags application, you can contact the developer at:",
+        "Email: xolariacorporation@gmail.com"
+      ]
     }
-  ];
-
-  const dataTypes = [
-    { en: "Contact names", id: "Nama kontak" },
-    { en: "Wallet addresses", id: "Alamat wallet" },
-    { en: "Contact notes", id: "Catatan kontak" },
-    { en: "Group or entity labels", id: "Label grup atau entitas" },
-    { en: "Optional email or phone information", id: "Email atau telepon opsional" },
-    { en: "Optional encrypted vault data", id: "Data vault terenkripsi opsional" }
   ];
 
   return (
@@ -85,16 +143,13 @@ export const CrypTagsPage = () => {
       <section className="border-b border-gray-100 bg-[#F8F9FA]">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            {/* Image Placeholder */}
+            {/* Logo Image */}
             <div className="flex items-center justify-center">
-              <div className="flex h-64 w-full max-w-md items-center justify-center rounded-sm border-2 border-dashed border-gray-300 bg-white">
-                <div className="text-center">
-                  <span className="text-6xl font-bold text-gray-300">C</span>
-                  <p className="mt-2 text-sm text-gray-400">
-                    {t({ en: "Image Coming Soon", id: "Gambar Segera Hadir" })}
-                  </p>
-                </div>
-              </div>
+              <img
+                src={CRYPTAGS_LOGO}
+                alt="CrypTags Logo"
+                className="h-64 w-64 rounded-3xl object-cover shadow-lg"
+              />
             </div>
 
             {/* Content */}
@@ -116,59 +171,35 @@ export const CrypTagsPage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Privacy Policy Section */}
       <section className="border-b border-gray-100">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
-            {t({ en: "Key Features", id: "Fitur Utama" })}
-          </h2>
-          
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={index}
-                  className="rounded-sm border border-gray-200 bg-white p-6 shadow-sm"
-                  data-testid={`feature-card-${index}`}
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-[#D90429]/10">
-                    <Icon className="h-6 w-6 text-[#D90429]" />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-[#1A1A1A]">
-                    {t(feature.title)}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#6C757D]">
-                    {t(feature.description)}
-                  </p>
-                </div>
-              );
-            })}
+          <div className="border-b border-gray-200 pb-8 mb-8">
+            <h2 className="text-3xl font-bold text-[#1A1A1A] md:text-4xl">
+              Privacy Policy for CrypTags
+            </h2>
+            <p className="mt-3 text-sm text-[#6C757D]">
+              Last Updated: March 2026
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Data Types Section */}
-      <section className="border-b border-gray-100 bg-[#F8F9FA]">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
-            {t({ en: "What You Can Store", id: "Apa yang Dapat Anda Simpan" })}
-          </h2>
-          <p className="mt-4 text-base text-[#6C757D]">
-            {t({
-              en: "All information is stored only on your device and is not shared with the developer or any third parties.",
-              id: "Semua informasi hanya disimpan di perangkat Anda dan tidak dibagikan dengan pengembang atau pihak ketiga mana pun."
-            })}
+          <p className="text-base leading-relaxed text-[#1A1A1A] mb-8">
+            CrypTags respects your privacy and is committed to protecting user data. This Privacy Policy explains how the CrypTags application handles information when you use the app.
           </p>
-          
-          <div className="mt-8 grid gap-3 md:grid-cols-2">
-            {dataTypes.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 rounded-sm border border-gray-200 bg-white px-4 py-3"
-              >
-                <div className="h-2 w-2 rounded-full bg-[#D90429]" />
-                <span className="text-sm text-[#1A1A1A]">{t(item)}</span>
+
+          <div className="space-y-8">
+            {privacySections.map((section, index) => (
+              <div key={index} className="space-y-4">
+                <h3 className="text-xl font-semibold text-[#1A1A1A]">
+                  {section.title}
+                </h3>
+                <div className="space-y-2">
+                  {section.content.map((paragraph, pIndex) => (
+                    <p key={pIndex} className="text-base leading-relaxed text-[#6C757D]">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

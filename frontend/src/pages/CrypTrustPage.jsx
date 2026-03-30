@@ -1,56 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Globe, FileCheck, Fingerprint, Shield, CheckCircle } from "lucide-react";
+import { ArrowLeft, Globe, Clock } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+
+const CRYPTRUST_LOGO = "https://customer-assets.emergentagent.com/job_xol-corp-preview-2/artifacts/pikjwmir_LOGO%20-%20CrypTrust.png";
 
 export const CrypTrustPage = () => {
   const navigate = useNavigate();
   const { language, toggleLanguage, t } = useLanguage();
-
-  const features = [
-    {
-      icon: FileCheck,
-      title: { en: "Document Verification", id: "Verifikasi Dokumen" },
-      description: {
-        en: "Secure and immutable document verification using blockchain technology. Ensure authenticity and prevent tampering.",
-        id: "Verifikasi dokumen yang aman dan tidak dapat diubah menggunakan teknologi blockchain. Pastikan keaslian dan cegah manipulasi."
-      }
-    },
-    {
-      icon: Fingerprint,
-      title: { en: "Digital Signatures", id: "Tanda Tangan Digital" },
-      description: {
-        en: "Cryptographically secure digital signatures that provide non-repudiation and legal validity for your documents.",
-        id: "Tanda tangan digital yang aman secara kriptografis yang memberikan non-repudiasi dan validitas hukum untuk dokumen Anda."
-      }
-    },
-    {
-      icon: Shield,
-      title: { en: "Proof of Authenticity", id: "Bukti Keaslian" },
-      description: {
-        en: "Generate immutable proof of authenticity that can be verified by anyone, anytime, anywhere.",
-        id: "Hasilkan bukti keaslian yang tidak dapat diubah yang dapat diverifikasi oleh siapa pun, kapan pun, di mana pun."
-      }
-    },
-    {
-      icon: CheckCircle,
-      title: { en: "Compliance Ready", id: "Siap Kepatuhan" },
-      description: {
-        en: "Built with regulatory compliance in mind. Suitable for businesses and individuals requiring audit trails.",
-        id: "Dibangun dengan mempertimbangkan kepatuhan regulasi. Cocok untuk bisnis dan individu yang memerlukan jejak audit."
-      }
-    }
-  ];
-
-  const useCases = [
-    { en: "Legal document verification", id: "Verifikasi dokumen hukum" },
-    { en: "Certificate authenticity", id: "Keaslian sertifikat" },
-    { en: "Contract signing", id: "Penandatanganan kontrak" },
-    { en: "Academic credentials", id: "Kredensial akademik" },
-    { en: "Supply chain verification", id: "Verifikasi rantai pasokan" },
-    { en: "Identity verification", id: "Verifikasi identitas" }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -85,24 +43,24 @@ export const CrypTrustPage = () => {
       <section className="border-b border-gray-100 bg-[#F8F9FA]">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            {/* Image Placeholder */}
+            {/* Logo Image */}
             <div className="flex items-center justify-center">
-              <div className="flex h-64 w-full max-w-md items-center justify-center rounded-sm border-2 border-dashed border-gray-300 bg-white">
-                <div className="text-center">
-                  <span className="text-6xl font-bold text-gray-300">C</span>
-                  <p className="mt-2 text-sm text-gray-400">
-                    {t({ en: "Image Coming Soon", id: "Gambar Segera Hadir" })}
-                  </p>
-                </div>
-              </div>
+              <img
+                src={CRYPTRUST_LOGO}
+                alt="CrypTrust Logo"
+                className="h-64 w-64 rounded-3xl object-cover shadow-lg"
+              />
             </div>
 
             {/* Content */}
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D90429]">
-                {t({ en: "Portfolio Project", id: "Proyek Portofolio" })}
-              </p>
-              <h1 className="mt-3 text-4xl font-bold text-[#1A1A1A] md:text-5xl" data-testid="cryptrust-title">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
+                  <Clock className="h-3 w-3" />
+                  {t({ en: "Upcoming Project", id: "Proyek Akan Datang" })}
+                </span>
+              </div>
+              <h1 className="text-4xl font-bold text-[#1A1A1A] md:text-5xl" data-testid="cryptrust-title">
                 CrypTrust
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-[#6C757D]">
@@ -116,55 +74,35 @@ export const CrypTrustPage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Upcoming Notice Section */}
       <section className="border-b border-gray-100">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
-            {t({ en: "Key Features", id: "Fitur Utama" })}
-          </h2>
-          
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={index}
-                  className="rounded-sm border border-gray-200 bg-white p-6 shadow-sm"
-                  data-testid={`feature-card-${index}`}
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-[#D90429]/10">
-                    <Icon className="h-6 w-6 text-[#D90429]" />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-[#1A1A1A]">
-                    {t(feature.title)}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#6C757D]">
-                    {t(feature.description)}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="border-b border-gray-100 bg-[#F8F9FA]">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
-            {t({ en: "Use Cases", id: "Kasus Penggunaan" })}
-          </h2>
-          
-          <div className="mt-8 grid gap-3 md:grid-cols-2">
-            {useCases.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 rounded-sm border border-gray-200 bg-white px-4 py-3"
-              >
-                <div className="h-2 w-2 rounded-full bg-[#D90429]" />
-                <span className="text-sm text-[#1A1A1A]">{t(item)}</span>
-              </div>
-            ))}
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-amber-100 mb-6">
+              <Clock className="h-10 w-10 text-amber-600" />
+            </div>
+            
+            <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
+              {t({ en: "Coming Soon", id: "Segera Hadir" })}
+            </h2>
+            
+            <p className="mt-4 text-lg text-[#6C757D]">
+              {t({
+                en: "This project is scheduled to start around",
+                id: "Proyek ini dijadwalkan untuk dimulai sekitar"
+              })}
+            </p>
+            
+            <p className="mt-2 text-3xl font-bold text-[#D90429]">
+              1 July 2026
+            </p>
+            
+            <p className="mt-6 text-base text-[#6C757D] leading-relaxed">
+              {t({
+                en: "CrypTrust will bring secure document verification, digital signatures, and immutable proof of authenticity using blockchain technology. Stay tuned for updates!",
+                id: "CrypTrust akan menghadirkan verifikasi dokumen yang aman, tanda tangan digital, dan bukti keaslian yang tidak dapat diubah menggunakan teknologi blockchain. Nantikan pembaruannya!"
+              })}
+            </p>
           </div>
         </div>
       </section>

@@ -1,45 +1,112 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Globe, TrendingUp, PieChart, Bell, Layers } from "lucide-react";
+import { ArrowLeft, Globe } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+
+const CRYPTRACK_LOGO = "https://customer-assets.emergentagent.com/job_xol-corp-preview-2/artifacts/xnj0fgyv_LOGO%20-%20CrypTrack.png";
 
 export const CrypTrackPage = () => {
   const navigate = useNavigate();
   const { language, toggleLanguage, t } = useLanguage();
 
-  const features = [
+  const privacySections = [
     {
-      icon: TrendingUp,
-      title: { en: "Real-Time Price Tracking", id: "Pelacakan Harga Real-Time" },
-      description: {
-        en: "Monitor cryptocurrency prices in real-time with live updates from multiple exchanges and data sources.",
-        id: "Pantau harga cryptocurrency secara real-time dengan pembaruan langsung dari berbagai bursa dan sumber data."
-      }
+      title: "1. Core Principle",
+      content: [
+        "CrypTrack operates under a fundamental principle:",
+        "Your data is yours. We do not collect, store, or transmit your personal or financial data to any external server."
+      ]
     },
     {
-      icon: PieChart,
-      title: { en: "Portfolio Analytics", id: "Analitik Portofolio" },
-      description: {
-        en: "Comprehensive portfolio analysis with profit/loss tracking, allocation breakdowns, and performance metrics.",
-        id: "Analisis portofolio komprehensif dengan pelacakan untung/rugi, rincian alokasi, dan metrik kinerja."
-      }
+      title: "2. Data Storage",
+      content: [
+        "• All data is stored locally on your device only",
+        "• No cloud storage is used",
+        "• No centralized database exists",
+        "• No account registration is required",
+        "This includes:",
+        "• Portfolio data",
+        "• Custom cryptocurrency entries",
+        "• Application settings"
+      ]
     },
     {
-      icon: Bell,
-      title: { en: "Price Alerts", id: "Peringatan Harga" },
-      description: {
-        en: "Set custom price alerts to stay informed about market movements and never miss trading opportunities.",
-        id: "Atur peringatan harga khusus untuk tetap mendapat informasi tentang pergerakan pasar dan jangan lewatkan peluang trading."
-      }
+      title: "3. No Data Collection",
+      content: [
+        "CrypTrack does not collect:",
+        "• Personal information",
+        "• Wallet private keys or seed phrases",
+        "• Usage analytics",
+        "• Device identifiers",
+        "• Location data"
+      ]
     },
     {
-      icon: Layers,
-      title: { en: "Multi-Chain Support", id: "Dukungan Multi-Chain" },
-      description: {
-        en: "Track assets across multiple blockchains including Ethereum, BSC, Polygon, Solana, and more.",
-        id: "Lacak aset di berbagai blockchain termasuk Ethereum, BSC, Polygon, Solana, dan lainnya."
-      }
+      title: "4. No Third-Party Tracking",
+      content: [
+        "The application:",
+        "• Does not use tracking SDKs",
+        "• Does not use analytics services",
+        "• Does not include advertising networks"
+      ]
+    },
+    {
+      title: "5. External Content (Track Panel)",
+      content: [
+        "The Track feature uses an in-app browser to display third-party websites (e.g., CoinMarketCap).",
+        "• These websites operate under their own privacy policies",
+        "• CrypTrack does not control or store any data from those websites",
+        "• Users are responsible for reviewing third-party policies"
+      ]
+    },
+    {
+      title: "6. Data Export",
+      content: [
+        "Users may export their data manually via:",
+        "• JSON format",
+        "• CSV format",
+        "All exported data remains under the user's control and responsibility."
+      ]
+    },
+    {
+      title: "7. Data Deletion",
+      content: [
+        "Users can permanently delete all data via:",
+        "\"Clear All Data\" feature inside the app",
+        "This action:",
+        "• Deletes all stored data locally",
+        "• Is irreversible"
+      ]
+    },
+    {
+      title: "8. Security",
+      content: [
+        "CrypTrack follows a local-first security model:",
+        "• No internet exposure for sensitive data",
+        "• Reduced attack surface (no backend server)",
+        "However, users are responsible for:",
+        "• Securing their device",
+        "• Maintaining backups if needed"
+      ]
+    },
+    {
+      title: "9. Children's Privacy",
+      content: [
+        "CrypTrack does not knowingly collect or process data from children, as no data collection occurs."
+      ]
+    },
+    {
+      title: "10. Changes to This Policy",
+      content: [
+        "This Privacy Policy may be updated periodically. Updates will be reflected within the app or official distribution channels."
+      ]
+    },
+    {
+      title: "11. Contact",
+      content: [
+        "For questions or support: xolariacorporation@gmail.com"
+      ]
     }
   ];
 
@@ -76,16 +143,13 @@ export const CrypTrackPage = () => {
       <section className="border-b border-gray-100 bg-[#F8F9FA]">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            {/* Image Placeholder */}
+            {/* Logo Image */}
             <div className="flex items-center justify-center">
-              <div className="flex h-64 w-full max-w-md items-center justify-center rounded-sm border-2 border-dashed border-gray-300 bg-white">
-                <div className="text-center">
-                  <span className="text-6xl font-bold text-gray-300">C</span>
-                  <p className="mt-2 text-sm text-gray-400">
-                    {t({ en: "Image Coming Soon", id: "Gambar Segera Hadir" })}
-                  </p>
-                </div>
-              </div>
+              <img
+                src={CRYPTRACK_LOGO}
+                alt="CrypTrack Logo"
+                className="h-64 w-64 rounded-3xl object-cover shadow-lg"
+              />
             </div>
 
             {/* Content */}
@@ -107,34 +171,56 @@ export const CrypTrackPage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Privacy Policy Section */}
       <section className="border-b border-gray-100">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="text-2xl font-semibold text-[#1A1A1A] md:text-3xl">
-            {t({ en: "Key Features", id: "Fitur Utama" })}
-          </h2>
-          
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={index}
-                  className="rounded-sm border border-gray-200 bg-white p-6 shadow-sm"
-                  data-testid={`feature-card-${index}`}
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-[#D90429]/10">
-                    <Icon className="h-6 w-6 text-[#D90429]" />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-[#1A1A1A]">
-                    {t(feature.title)}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#6C757D]">
-                    {t(feature.description)}
-                  </p>
+          <div className="border-b border-gray-200 pb-8 mb-8">
+            <h2 className="text-3xl font-bold text-[#1A1A1A] md:text-4xl">
+              PRIVACY POLICY — CRYPTRACK
+            </h2>
+            <p className="mt-3 text-sm text-[#6C757D]">
+              Effective Date: 30 March 2026
+            </p>
+          </div>
+
+          <p className="text-base leading-relaxed text-[#1A1A1A] mb-8">
+            CrypTrack ("the App") is designed with a strict privacy-first architecture. This Privacy Policy explains how your data is handled when using the application.
+          </p>
+
+          <div className="space-y-8">
+            {privacySections.map((section, index) => (
+              <div key={index} className="space-y-4">
+                <h3 className="text-xl font-semibold text-[#1A1A1A]">
+                  {section.title}
+                </h3>
+                <div className="space-y-2">
+                  {section.content.map((paragraph, pIndex) => (
+                    <p key={pIndex} className="text-base leading-relaxed text-[#6C757D]">
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
-              );
-            })}
+              </div>
+            ))}
+          </div>
+
+          {/* Final Statement */}
+          <div className="mt-12 p-6 bg-[#F8F9FA] rounded-sm border border-gray-200">
+            <h3 className="text-xl font-bold text-[#1A1A1A] mb-4">
+              FINAL STATEMENT
+            </h3>
+            <p className="text-base leading-relaxed text-[#1A1A1A] mb-4">
+              CrypTrack is built with a clear objective:
+            </p>
+            <p className="text-lg font-semibold text-[#D90429] mb-4">
+              Maximum control, zero data exploitation.
+            </p>
+            <p className="text-base leading-relaxed text-[#6C757D]">
+              We do not monetize your data. We do not track you. We do not own your information.
+            </p>
+            <p className="text-lg font-bold text-[#1A1A1A] mt-4">
+              You do.
+            </p>
           </div>
         </div>
       </section>
