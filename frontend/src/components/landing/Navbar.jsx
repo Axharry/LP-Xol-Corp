@@ -5,8 +5,7 @@ import { Globe } from "lucide-react";
 
 const navItems = [
   { label: { en: "Services", id: "Layanan" }, sectionId: "services" },
-  { label: { en: "Products", id: "Produk" }, sectionId: "products" },
-  { label: { en: "Founder", id: "Pendiri" }, sectionId: "founder" },
+  { label: { en: "Portfolio", id: "Portofolio" }, sectionId: "portfolio" },
   { label: { en: "About", id: "Tentang" }, sectionId: "about" },
   { label: { en: "Contact", id: "Kontak" }, sectionId: "contact" },
 ];

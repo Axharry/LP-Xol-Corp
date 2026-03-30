@@ -9,8 +9,8 @@ export const contactInfo = {
   emails: ["info@xolaria.pro", "xolariacorp@gmail.com"],
   whatsapp: "0813 5371 2324",
   whatsappLink: "https://wa.me/6281353712324",
-  instagram: "@xolariacorporation",
-  instagramLink: "https://www.instagram.com/xolariacorporation",
+  instagram: "@xolariacorp",
+  instagramLink: "https://www.instagram.com/xolariacorp",
 };
 
 export const serviceItems = [

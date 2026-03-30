@@ -3,10 +3,8 @@ import Lenis from "lenis";
 import { Navbar } from "@/components/landing/Navbar";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { ServicesSection } from "@/components/landing/ServicesSection";
-import { ProductsSection } from "@/components/landing/ProductsSection";
-import { UpcomingProductSection } from "@/components/landing/UpcomingProductSection";
 import { UpcomingSection } from "@/components/landing/UpcomingSection";
-import { FounderSection } from "@/components/landing/FounderSection";
+import { PortfolioSection } from "@/components/landing/PortfolioSection";
 import { AboutSection } from "@/components/landing/AboutSection";
 import { ContactSection } from "@/components/landing/ContactSection";
 import { FooterSection } from "@/components/landing/FooterSection";
@@ -40,9 +38,7 @@ export const LandingPage = () => {
       <HeroSection />
       <ServicesSection />
       <UpcomingSection />
-      <ProductsSection />
-      <UpcomingProductSection />
-      <FounderSection />
+      <PortfolioSection />
       <AboutSection />
       <ContactSection />
       <FooterSection />
